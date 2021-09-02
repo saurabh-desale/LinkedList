@@ -55,7 +55,21 @@ public class SLLOperations<K> {
 		return myList;
 
 	}
-
+	
+	public SLLOperations<K> delLast(SLLOperations<K> myList) {
+		if (head == null) {
+			System.out.println("Linked List is Empty"); 
+		}
+		Node<K> temp = head;
+		Node<K> last = head;
+		while(temp.next != null) {
+			last = temp;
+			temp = temp.next;
+		}
+		last.next = null; 
+		return myList;
+	}
+	
 	public void display(SLLOperations<K> myList) {
 		if (head == null) {
 			System.out.println("Linked list is Empty");
