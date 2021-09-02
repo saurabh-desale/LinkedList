@@ -17,6 +17,17 @@ public class SLLOperations<K> {
 		}
 		return myList;
 	}
+	
+	public SLLOperations<K> addFirst(SLLOperations<K> obj, K element) {
+		Node<K> newNode = new Node<K>(element);
+		if (head == null) {
+			head = newNode;
+		} else {
+			newNode.next = head;
+			head = newNode;
+		}
+		return obj;
+	}
 
 	public void display(SLLOperations<K> myList) {
 		if (head == null) {
