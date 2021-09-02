@@ -1,6 +1,5 @@
 package com.blz;
 
-
 public class SLLOperations<K> {
 	Node<K> head;
 
@@ -17,7 +16,7 @@ public class SLLOperations<K> {
 		}
 		return myList;
 	}
-	
+
 	public SLLOperations<K> addFirst(SLLOperations<K> obj, K element) {
 		Node<K> newNode = new Node<K>(element);
 		if (head == null) {
@@ -27,6 +26,34 @@ public class SLLOperations<K> {
 			head = newNode;
 		}
 		return obj;
+	}
+
+	public SLLOperations<K> addAtNthPos(SLLOperations<K> myList, K key, int pos) {
+		Node<K> newNode = new Node<K>(key);
+		int counter = 1;
+		if (head == null) {
+			head = newNode;
+		} else if (counter <= pos) {
+			Node<K> temp = head;
+			while (temp.next != null && counter < pos - 1) {
+				counter++;
+				temp = temp.next;
+			}
+			newNode.next = temp.next;
+			temp.next = newNode;
+		}
+		return myList;
+	}
+
+	public SLLOperations<K> delFirst(SLLOperations<K> myList) {
+		if (head == null)
+			System.out.println("Linked List is Empty");
+		Node<K> temp = head;
+		head = temp.next;
+		temp = null;
+
+		return myList;
+
 	}
 
 	public void display(SLLOperations<K> myList) {
