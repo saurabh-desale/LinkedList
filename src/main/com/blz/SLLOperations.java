@@ -1,7 +1,7 @@
 package com.blz;
 
 public class SLLOperations<K> {
-	Node<K> head;
+	public Node<K> head;
 
 	public SLLOperations<K> addLast(SLLOperations<K> myList, K element) {
 		Node<K> newNode = new Node<K>(element);
