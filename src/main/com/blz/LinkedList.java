@@ -16,6 +16,11 @@ public class LinkedList {
 		list.addFirst(list, 56);
 		list.addAtNthPos(list, 30, 1);
 		list.delLast(list);
+		
+		list.display(list);
+		list.addLast(list, 70);
+		list.searchKey(list, 30);
+		list.searchKeyAndInsertAfterExistingKey(list, 30, 40);
 		list.display(list);
 		
 }

@@ -1,5 +1,6 @@
 package com.blz;
 
+
 public class SLLOperations<K> {
 	public Node<K> head;
 
@@ -16,7 +17,48 @@ public class SLLOperations<K> {
 		}
 		return myList;
 	}
+	
 
+	public void searchKey(SLLOperations<K> myList, K data) {
+
+		if (head == null) {
+			System.out.println("Linked List is Empty");
+		}
+		Node<K> temp = head;
+		int count = 0;
+		while (temp.getKey() != data && temp.next != null) {
+			temp = temp.next;
+			count++;
+		}
+		if (temp.key == data) {
+			System.out.println("key is geting at "+count+"th index");
+		}else {
+			System.out.println("No such elements");
+		}
+
+	}
+	public SLLOperations<K> searchKeyAndInsertAfterExistingKey(SLLOperations<K> myList, K data,K data2) {
+		
+		Node<K> newNode = new Node<>(data2);
+		if (head == null) {
+			System.out.println("Linked List is Empty");
+		}
+		Node<K> temp = head;
+//		int count = 0;
+		while (temp.key != data && temp.next != null) {
+			temp = temp.next;
+//			count++;
+		}
+		if (temp.key == data) {
+			newNode.next = temp.next;
+			temp.next=newNode;	
+		}else {
+			System.out.println("No such elements");
+		}
+		return myList;
+		
+	}
+	
 	public SLLOperations<K> addFirst(SLLOperations<K> obj, K element) {
 		Node<K> newNode = new Node<K>(element);
 		if (head == null) {
