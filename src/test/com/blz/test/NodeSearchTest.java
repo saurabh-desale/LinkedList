@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import com.blz.Node;
 
-class NodeSearchTest {
+class NodeSearchTest<K> {
 
 	@Test
 	 void testSearchNodeKey( ) {
@@ -49,6 +49,22 @@ class NodeSearchTest {
 				&& mySecondNode.getKey()==30 && count ==2; 
 		assertTrue(result);
 		
+	}
+	
+	@Test
+	void searchKeyAndDelete() {
+		com.blz.SLLOperations<Integer> obj = new com.blz.SLLOperations<>();
+		
+		obj.addLast(obj, 56);
+		obj.addLast(obj, 30);
+		obj.addLast(obj, 40);
+		obj.addLast(obj, 70);
+		System.out.println("from the Node test");
+		obj.display(obj);
+		obj.searchKeyAndDelete(obj, 40);
+		obj.display(obj);
+		
+		assertTrue(obj.sizeOfLinkedList(obj)==3);	
 	}
 
 

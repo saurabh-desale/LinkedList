@@ -22,6 +22,9 @@ public class LinkedList {
 		list.searchKey(list, 30);
 		list.searchKeyAndInsertAfterExistingKey(list, 30, 40);
 		list.display(list);
+		list.searchKeyAndDelete(list, 40);
+		list.display(list);
+		list.sizeOfLinkedList(list);
 		
 }
 }
